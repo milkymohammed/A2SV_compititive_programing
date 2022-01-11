@@ -1,0 +1,6 @@
+n = int(input())
+roll1 = set(map(int, input().split()))
+m = int(input())
+roll2 = set(map(int, input().split()))
+roll3 = roll1.union(roll2)
+print(len(roll3))
