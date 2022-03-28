@@ -1,0 +1,16 @@
+class Solution:
+    def partitionLabels(self, s: str) -> List[int]:    
+        end = {}
+        for i, sym in enumerate(s):
+            end[sym] = i 
+        l = 0
+        r = 0
+        chop_len = 0
+        res = []
+        for i, sym in enumerate(s):   
+            chop_len += 1 
+            r = max(end[sym], r)
+            if i == r:
+                res.append(chop_len)
+                chop_len = 0
+        return res
