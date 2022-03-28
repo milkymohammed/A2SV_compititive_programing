@@ -1,0 +1,15 @@
+	ans = []
+	def dfs(node=root, level=0):
+		if not node:
+			return
+		if len(ans)-1 < level:
+			ans.append(node.val)
+		else:
+			ans[level] = max(node.val, ans[level])
+
+		dfs(node.left, level+1)
+		dfs(node.right, level+1)
+	dfs()
+
+    
+	return ans
