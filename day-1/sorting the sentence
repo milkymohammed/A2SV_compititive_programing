@@ -1,0 +1,13 @@
+        a = {}
+        res = []
+        
+        for i in s.split():
+            num = int(i[-1])
+            val = i[:-1]
+            a[num] = val
+         
+        for j in sorted(a):
+            res.append(a[j])
+            
+            
+        return " ".join(res)
